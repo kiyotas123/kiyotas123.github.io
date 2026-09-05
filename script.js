@@ -13,10 +13,11 @@ const interests = [
 
 const projects = [
   {
-    index: "01",
-    title: "SolidWorks Project",
-    category: "CAD / Part Design",
-    image: "images/project-solidworks.jpg",
+      index: "01",
+  title: "SolidWorks Project",
+  category: "CAD / Part Design",
+  link: "projects/cad.html",
+  image: "images/project-solidworks.jpg",
     summary:
       "Placeholder for a parametric part modeled in SolidWorks with attention to design intent and manufacturability.",
     tags: ["SOLIDWORKS", "3D MODELING", "PART DESIGN"],
