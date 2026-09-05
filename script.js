@@ -36,7 +36,7 @@ const projects = [
     index: "03",
     title: "Robotics / Hands-On Project",
     category: "Build / Mechatronics",
-    link: "projects/drawings.html",
+    link: "projects/robotics.html",
     image: "images/project-robotics.jpg",
     summary:
       "Placeholder for a hands-on build combining mechanical assembly, troubleshooting, and iterative testing.",
