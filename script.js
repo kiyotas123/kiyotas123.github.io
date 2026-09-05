@@ -106,7 +106,7 @@ document.getElementById("interests").append(
 document.getElementById("projects-grid").append(
   ...projects.map((p) =>
     el(`
-      <article class="project reveal">
+   <article class="project reveal" data-link="${p.link || ""}">
         <div class="project-img"><img src="${p.image}" alt="${p.title} — ${p.category}" loading="lazy" /></div>
         <div class="project-body">
           <p class="label accent">${p.index} — ${p.category}</p>
