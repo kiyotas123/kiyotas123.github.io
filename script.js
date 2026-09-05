@@ -117,6 +117,13 @@ document.getElementById("projects-grid").append(
       </article>`)
   )
 );
+document.querySelectorAll(".project[data-link]").forEach((project) => {
+  project.style.cursor = "pointer";
+
+  project.addEventListener("click", () => {
+    window.location.href = project.dataset.link;
+  });
+});
 
 document.getElementById("software").append(
   ...software.map((s) =>
