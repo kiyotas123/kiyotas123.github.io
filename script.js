@@ -26,6 +26,7 @@ const projects = [
     index: "02",
     title: "Technical Drawing",
     category: "Engineering Graphics",
+    link: "projects/drawings.html",
     image: "images/project-drawing.jpg",
     summary:
       "Placeholder for a fully dimensioned multi-view engineering drawing produced to standard drafting practice.",
