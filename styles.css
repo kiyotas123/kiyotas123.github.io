@@ -321,3 +321,16 @@ input:focus, textarea:focus { border-color: var(--primary); }
   background: var(--accent);
   color: #ffffff;
 }
+
+/* Keep project images inside their existing boxes */
+.project-img {
+  height: 220px;
+  overflow: hidden;
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
