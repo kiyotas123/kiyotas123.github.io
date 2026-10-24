@@ -322,15 +322,20 @@ input:focus, textarea:focus { border-color: var(--primary); }
   color: #ffffff;
 }
 
-/* Keep project images inside their existing boxes */
+/* Project image box */
 .project-img {
   height: 220px;
+  width: 100%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-img img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
