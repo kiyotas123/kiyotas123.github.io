@@ -17,7 +17,7 @@ const projects = [
   title: "SolidWorks Project",
   category: "CAD / Part Design",
   link: "projects/cad.html",
-  image: "images/project-solidworks.jpg",
+  image: "images/solidworks.png",
     summary:
       "Placeholder for a parametric part modeled in SolidWorks with attention to design intent and manufacturability.",
     tags: ["SOLIDWORKS", "3D MODELING", "PART DESIGN"],
@@ -27,7 +27,7 @@ const projects = [
     title: "Technical Drawing",
     category: "Engineering Graphics",
     link: "projects/drawings.html",
-    image: "images/project-drawing.jpg",
+    image:"images/technical-drawing.png",
     summary:
       "Placeholder for a fully dimensioned multi-view engineering drawing produced to standard drafting practice.",
     tags: ["AUTOCAD", "ENGINEERING GRAPHICS", "TECHNICAL DRAWING"],
@@ -37,7 +37,7 @@ const projects = [
     title: "Robotics / Hands-On Project",
     category: "Build / Mechatronics",
     link: "projects/robotics.html",
-    image: "images/project-robotics.jpg",
+    image: "images/robotics.png",
     summary:
       "Placeholder for a hands-on build combining mechanical assembly, troubleshooting, and iterative testing.",
     tags: ["ROBOTICS", "HANDS-ON", "PROBLEM SOLVING"],
