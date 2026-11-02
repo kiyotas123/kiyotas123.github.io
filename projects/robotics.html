@@ -28,11 +28,10 @@
     </div>
   </header>
 
-  <main class="section">
+  <main class="section robotics-catalog">
     <div class="wrap">
 
       <p class="label accent">PROJECT CATALOG</p>
-
       <h1>Robotics & Hands-On Projects</h1>
 
       <p class="section-intro">
@@ -45,48 +44,124 @@
         <article class="project">
 
           <div class="project-img">
-            <div class="project-placeholder">
-              PROJECT IMAGE
-            </div>
+            <img src="../images/pop-robot-arm.jpg"
+                 alt="Popsicle-stick robotic arm prototype with servo motors">
           </div>
 
           <div class="project-body">
 
-            <p class="label accent">
-              01 — ROBOTICS / HANDS-ON
-            </p>
+            <p class="label accent">01 — ROBOTICS / HANDS-ON</p>
 
-            <h3>Project Name</h3>
+            <h3>Popsicle-Stick Robotic Arm</h3>
 
             <p>
-              Short description of the robotics or hands-on engineering
-              project will go here.
+              A hands-on robotic arm project built using popsicle sticks
+              and servo motors. The project explores mechanical movement,
+              motor placement, and basic robotics.
+            </p>
+
+            <p class="progress-note">
+              <span class="progress-dot"></span>
+              IN PROGRESS — Prototype is still being built and tested.
             </p>
 
             <div class="tags">
               <span class="tag">ARDUINO</span>
               <span class="tag">ROBOTICS</span>
-              <span class="tag">PROGRAMMING</span>
+              <span class="tag">SERVO MOTORS</span>
               <span class="tag">HANDS-ON</span>
             </div>
 
-            <details class="learn-more">
-              <summary>LEARN MORE</summary>
-              <p>
-                More information about this project, including its design,
-                components, building process, and testing results, will
-                be added here.
-              </p>
-            </details>
+            <button class="learn-more-btn" id="openProject">
+              LEARN MORE →
+            </button>
 
           </div>
-
         </article>
 
       </div>
-
     </div>
   </main>
+
+  <!-- PROJECT POPUP -->
+  <dialog class="project-modal" id="projectModal">
+
+    <button class="modal-close" id="closeProject" aria-label="Close popup">
+      &times;
+    </button>
+
+    <div class="modal-content">
+
+      <div class="modal-description">
+        <p class="label accent">01 — ROBOTICS / HANDS-ON</p>
+
+        <h2>Popsicle-Stick Robotic Arm</h2>
+
+        <p class="progress-note">
+          <span class="progress-dot"></span>
+          IN PROGRESS — Prototype is still being built and tested.
+        </p>
+
+        <h3>Project Overview</h3>
+
+        <p>
+          This project involves building a small robotic arm using
+          popsicle sticks, servo motors, and an Arduino-based control setup.
+          The goal is to create a working arm that can move through
+          different positions and operate a small claw.
+        </p>
+
+        <h3>Design & Construction</h3>
+
+        <p>
+          The frame was assembled using popsicle sticks to create the
+          arm structure and moving joints. Servo motors were added to
+          control different sections of the arm.
+        </p>
+
+        <h3>Testing & Improvements</h3>
+
+        <p>
+          The prototype is being tested as the motors and mechanical
+          structure are adjusted. Future improvements will focus on
+          smoother movement, better stability, and improving the
+          overall design.
+        </p>
+
+        <p class="modal-footer-note">
+          This project is a work in progress. More photos and updates
+          will be added as development continues.
+        </p>
+      </div>
+
+      <div class="modal-image">
+        <img src="../images/pop-robot-arm.jpg"
+             alt="Popsicle-stick robotic arm prototype">
+        <p class="label muted">ROBOTIC ARM — CURRENT BUILD</p>
+      </div>
+
+    </div>
+  </dialog>
+
+  <script>
+    const modal = document.getElementById("projectModal");
+    const openButton = document.getElementById("openProject");
+    const closeButton = document.getElementById("closeProject");
+
+    openButton.addEventListener("click", () => {
+      modal.showModal();
+    });
+
+    closeButton.addEventListener("click", () => {
+      modal.close();
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.close();
+      }
+    });
+  </script>
 
 </body>
 </html>
