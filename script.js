@@ -58,14 +58,22 @@ const skills = [
 
 const roles = [
   {
-    org: "University of Houston Recreation Center",
-    title: "ID Check Attendant / Administrative Assistant",
-    period: "09/2025 — Present",
+    org: "Hibbett Sports",
+    title: "Sales Associate",
+    period: "05/2024 — 06/2025",
     description:
-      "Verify credentials, provide customer service, enforce facility policies, organize records, and support daily administrative operations.",
-    skills: ["Attention to Detail", "Record Keeping", "Policy Compliance"],
+      "Assisted customers, maintained store organization and displays, managed inventory, and supported daily operations.",
+    skills: ["Inventory Management", "Organization", "Communication"],
   },
   {
+    org: "Family Daycare",
+    title: "Childcare Assistant",
+    period: "2017 — Present",
+    description:
+      "Assisted with supervision and activities while maintaining a safe environment and communicating with children and parents.",
+    skills: ["Responsibility", "Safety Awareness", "Communication"],
+  },
+];
     org: "Charley's Cheesesteaks",
     title: "Cashier / Crew Member",
     period: "Summer 2026",
