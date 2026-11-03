@@ -553,16 +553,16 @@ input:focus, textarea:focus { border-color: var(--primary); }
 }
 /* Robotics gallery - mobile image fix */
 @media (max-width: 767px) {
-  .robotics-catalog .project-img {
-    aspect-ratio: 16 / 9;
-    height: auto;
-    overflow: hidden;
-  }
+.robotics-catalog .project-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
 
-  .robotics-catalog .project-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+.robotics-catalog .project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
   }
 }
