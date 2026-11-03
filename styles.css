@@ -334,11 +334,17 @@ input:focus, textarea:focus { border-color: var(--primary); }
   max-width: 490px;
 }
 
-/* Red project tags */
+/* Regular project tags */
 .robotics-catalog .tag {
-  color: #e31b23;
-  border: 1px solid rgba(227, 27, 35, 0.45);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
   background: transparent;
+}
+
+/* Red in-progress tag */
+.robotics-catalog .tag-progress {
+  color: #e31b23;
+  border: 1px solid #e31b23;
 }
 
 /* Learn More */
@@ -498,10 +504,13 @@ input:focus, textarea:focus { border-color: var(--primary); }
 /* Mobile layout */
 @media (max-width: 700px) {
   .project-modal {
-    width: 94vw;
-    max-height: 90vh;
-    overflow-y: auto;
-  }
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  transform: none;
+  width: min(1000px, 92vw);
+  max-height: 88vh;
+}
 
   .modal-layout {
     grid-template-columns: 1fr;
@@ -521,4 +530,15 @@ input:focus, textarea:focus { border-color: var(--primary); }
     padding: 1.2rem;
   }
 }
+/* Project cover image */
+.robotics-catalog .project-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
 
+.robotics-catalog .project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
