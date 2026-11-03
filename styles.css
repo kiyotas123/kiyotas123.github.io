@@ -325,10 +325,15 @@ input:focus, textarea:focus { border-color: var(--primary); }
 /* ROBOTICS PROJECT PAGE */
 
 .robotics-catalog .project-grid {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   justify-items: stretch;
 }
 
+@media (min-width: 768px) {
+  .robotics-catalog .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .robotics-catalog .project {
   width: 100%;
   max-width: none;
