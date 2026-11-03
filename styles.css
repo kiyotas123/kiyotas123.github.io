@@ -322,3 +322,203 @@ input:focus, textarea:focus { border-color: var(--primary); }
   color: #ffffff;
 }
 
+/* ROBOTICS PROJECT PAGE */
+
+.robotics-catalog .project-grid {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.robotics-catalog .project {
+  width: 100%;
+  max-width: 490px;
+}
+
+/* Red project tags */
+.robotics-catalog .tag {
+  color: #e31b23;
+  border: 1px solid rgba(227, 27, 35, 0.45);
+  background: transparent;
+}
+
+/* Learn More */
+.learn-more-btn {
+  display: inline-block;
+  margin-top: 1.2rem;
+  margin-left: 0.5rem;
+  padding: 0.4rem 0;
+  border: none;
+  background: transparent;
+  color: #e31b23;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
+
+.learn-more-btn:hover {
+  color: #ffffff;
+  background: transparent;
+}
+
+/* Instagram-style project popup */
+.project-modal {
+  position: fixed;
+  width: min(1000px, 92vw);
+  max-width: 1000px;
+  max-height: 88vh;
+  padding: 0;
+  border: 1px solid #30343a;
+  background: #111318;
+  color: #f4f4f4;
+  overflow: visible;
+}
+
+.project-modal[open] {
+  display: flex;
+}
+
+.project-modal::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.modal-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  width: 100%;
+  min-height: 550px;
+  max-height: 88vh;
+}
+
+/* Large image on left */
+.modal-image {
+  background: #080a0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 88vh;
+  object-fit: contain;
+}
+
+/* Information panel on right */
+.modal-description {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-y: auto;
+  background: #111318;
+}
+
+.modal-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem;
+  border-bottom: 1px solid #30343a;
+}
+
+.modal-heading strong {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+.modal-heading .label {
+  margin-top: 0.2rem;
+}
+
+.modal-details {
+  padding: 1.5rem;
+}
+
+.modal-details h2 {
+  margin: 0.8rem 0;
+  font-size: 1.7rem;
+}
+
+.modal-details h3 {
+  margin-top: 1.5rem;
+  color: #e31b23;
+  font-size: 1rem;
+}
+
+.modal-details p {
+  line-height: 1.7;
+}
+
+.progress-note {
+  color: #e31b23;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 1rem 0;
+}
+
+.progress-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: #e31b23;
+}
+
+.modal-footer-note {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #30343a;
+  color: #9ca3af;
+  font-size: 0.82rem;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  z-index: 5;
+  border: none;
+  background: transparent;
+  color: #e31b23;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: white;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .project-modal {
+    width: 94vw;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-layout {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .modal-image {
+    min-height: 280px;
+    max-height: 350px;
+  }
+
+  .modal-image img {
+    max-height: 350px;
+  }
+
+  .modal-details {
+    padding: 1.2rem;
+  }
+}
+
