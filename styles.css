@@ -512,12 +512,12 @@ input:focus, textarea:focus { border-color: var(--primary); }
 
 /* Mobile layout */
 @media (max-width: 700px) {
-  .project-modal {
+.project-modal {
   position: fixed;
   inset: 0;
   margin: auto;
   transform: none;
-  width: min(1000px, 92vw);
+  width: 92vw;
   max-height: 88vh;
 }
 
