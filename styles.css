@@ -326,13 +326,14 @@ input:focus, textarea:focus { border-color: var(--primary); }
 
 .robotics-catalog .project-grid {
   grid-template-columns: 1fr;
-  justify-items: center;
+  justify-items: start;
 }
 
 .robotics-catalog .project {
   width: 100%;
   max-width: 490px;
-  transform: translateX(40px);
+  margin-left: 0;
+  transform: none;
 }
 
 /* Regular project tags */
