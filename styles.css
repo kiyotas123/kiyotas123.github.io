@@ -337,7 +337,7 @@ input:focus, textarea:focus { border-color: var(--primary); }
 
 /* Regular project tags */
 .robotics-catalog .tag {
-  color: var(--text-muted);
+  color: var(--muted);
   border: 1px solid var(--border);
   background: transparent;
 }
