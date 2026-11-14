@@ -730,12 +730,13 @@ input:focus, textarea:focus { border-color: var(--primary); }
 .cert-card-top img.cert-logo {
   position: relative;
   z-index: 1;
-  width: 150px;
-  height: 120px;
+  width: 180px;
+  height: 145px;
   max-width: 85%;
   object-fit: contain;
-  background: transparent;
-  padding: 5px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 4px;
 }
 
 .cert-card-icon {
