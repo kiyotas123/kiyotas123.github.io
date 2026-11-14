@@ -207,9 +207,9 @@ const certCategories = [
 },
    {
     title: "MSI",
-    detail: "Management & Strategy Training",
-    icon: "MSI",
-    link: "certifications/msi.html",
+  detail: "Management & Strategy Training",
+  icon: "MSI",
+  link: "certifications/msi.html",
   },
   {
     title: "EVERFI",
