@@ -172,6 +172,120 @@ document.getElementById("timeline").append(
   )
 );
 
+// ---------- CERTIFICATION GALLERY ----------
+
+const certCategories = [
+  {
+    title: "SOLIDWORKS",
+    detail: "CAD & 3D Design",
+    icon: "SW",
+    link: "certifications/solidworks.html",
+  },
+  {
+    title: "AutoCAD",
+    detail: "Technical Drafting",
+    icon: "CAD",
+    link: "certifications/autocad.html",
+  },
+  {
+    title: "CPR / First Aid",
+    detail: "Safety & Emergency Response",
+    icon: "+",
+    link: "certifications/cpr-first-aid.html",
+  },
+  {
+    title: "SolidProfessor",
+    detail: "Engineering Software Training",
+    icon: "SP",
+    link: "certifications/solidprofessor.html",
+  },
+  {
+    title: "TEEX",
+    detail: "Workforce & Safety Training",
+    icon: "TX",
+    link: "certifications/teex.html",
+  },
+  {
+    title: "MSI",
+    detail: "Management & Strategy Training",
+    icon: "MSI",
+    link: "certifications/msi.html",
+  },
+  {
+    title: "EVERFI",
+    detail: "Professional Development",
+    icon: "E",
+    link: "certifications/everfi.html",
+  },
+];
+
+const certTrack = document.getElementById("certTrack");
+const certDots = document.getElementById("certDots");
+const certPrev = document.getElementById("certPrev");
+const certNext = document.getElementById("certNext");
+
+let certIndex = 0;
+
+function renderCertGallery() {
+  if (!certTrack || !certDots) return;
+
+  // Show three categories at a time
+  certTrack.innerHTML = "";
+
+  for (let i = 0; i < 3; i++) {
+    const category =
+      certCategories[(certIndex + i) % certCategories.length];
+
+    certTrack.innerHTML += `
+      <article class="cert-card">
+        <div class="cert-card-top">
+          <span class="cert-card-icon">${category.icon}</span>
+        </div>
+        <div class="cert-card-body">
+          <h3>${category.title}</h3>
+          <p>${category.detail}</p>
+          <a class="cert-view" href="${category.link}">
+            VIEW CREDENTIALS &rarr;
+          </a>
+        </div>
+      </article>
+    `;
+  }
+
+  // Create navigation dots
+  certDots.innerHTML = certCategories
+    .map((category, index) => `
+      <button
+        class="cert-dot ${index === certIndex ? "active" : ""}"
+        aria-label="Show ${category.title}"
+        data-index="${index}">
+      </button>
+    `)
+    .join("");
+
+  certDots.querySelectorAll(".cert-dot").forEach((dot) => {
+    dot.addEventListener("click", () => {
+      certIndex = Number(dot.dataset.index);
+      renderCertGallery();
+    });
+  });
+}
+
+if (certPrev && certNext) {
+  certPrev.addEventListener("click", () => {
+    certIndex =
+      (certIndex - 1 + certCategories.length) % certCategories.length;
+    renderCertGallery();
+  });
+
+  certNext.addEventListener("click", () => {
+    certIndex = (certIndex + 1) % certCategories.length;
+    renderCertGallery();
+  });
+}
+
+renderCertGallery();
+
 document.getElementById("year").textContent = new Date().getFullYear();
 
 /* ---------- Mobile menu ---------- */
