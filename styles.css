@@ -727,6 +727,14 @@ input:focus, textarea:focus { border-color: var(--primary); }
 }
 
 .cert-card-icon {
+   .cert-logo {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  background: #fff;
+  padding: 8px;
+}
   position: relative;
   display: grid;
   place-items: center;
