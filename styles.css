@@ -655,6 +655,9 @@ input:focus, textarea:focus { border-color: var(--primary); }
 
 /* ---------- CERTIFICATION GALLERY ---------- */
 
+
+/* ---------- CERTIFICATION GALLERY ---------- */
+
 #certifications {
   position: relative;
   overflow: hidden;
@@ -674,6 +677,7 @@ input:focus, textarea:focus { border-color: var(--primary); }
   margin-top: 1rem;
 }
 
+/* Gallery layout */
 .cert-gallery {
   display: grid;
   grid-template-columns: 48px minmax(0, 1fr) 48px;
@@ -689,6 +693,7 @@ input:focus, textarea:focus { border-color: var(--primary); }
   min-width: 0;
 }
 
+/* Cards */
 .cert-card {
   position: relative;
   min-width: 0;
@@ -703,9 +708,9 @@ input:focus, textarea:focus { border-color: var(--primary); }
   border-color: var(--primary);
 }
 
+/* Image area */
 .cert-card-top {
   height: 190px;
-min-height: 190px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -725,22 +730,11 @@ min-height: 190px;
     linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
   background-size: 22px 22px;
+  pointer-events: none;
 }
 
+/* Text-based placeholder icons */
 .cert-card-icon {
-   .cert-logo {
-   #certifications .cert-card-top img.cert-logo {
-  width: 88px !important;
-  height: 88px !important;
-  max-width: 88px;
-  max-height: 88px;
-  object-fit: contain;
-  background: #fff;
-  padding: 5px;
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  position: relative;
-}
   position: relative;
   display: grid;
   place-items: center;
@@ -755,6 +749,22 @@ min-height: 190px;
   letter-spacing: -1px;
 }
 
+/* Actual organization logos */
+.cert-card-top img.cert-logo {
+  position: relative;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 180px;
+  max-height: 155px;
+  object-fit: contain;
+  background: #fff;
+  padding: 8px;
+  box-sizing: border-box;
+  flex: 0 1 auto;
+}
+
+/* Card information */
 .cert-card-body {
   padding: 24px;
 }
@@ -789,6 +799,7 @@ min-height: 190px;
   color: #fff;
 }
 
+/* Arrow buttons */
 .cert-arrow {
   display: grid;
   place-items: center;
@@ -807,6 +818,7 @@ min-height: 190px;
   border-color: var(--primary);
 }
 
+/* Navigation dots */
 .cert-dots {
   display: flex;
   justify-content: center;
@@ -825,6 +837,59 @@ min-height: 190px;
   cursor: pointer;
   transition: 0.2s ease;
 }
+
+.cert-dot.active {
+  width: 24px;
+  border-radius: 10px;
+  background: var(--primary);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .cert-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cert-card:nth-child(n+3) {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .cert-gallery {
+    grid-template-columns: 34px minmax(0, 1fr) 34px;
+    gap: 8px;
+  }
+
+  .cert-track {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-card:nth-child(n+2) {
+    display: none;
+  }
+
+  .cert-card-top {
+    height: 160px;
+  }
+
+  .cert-card-top img.cert-logo {
+    max-width: 150px;
+    max-height: 135px;
+  }
+
+  .cert-card-body {
+    padding: 20px;
+  }
+
+  .cert-arrow {
+    width: 34px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
 
 .cert-dot.active {
   width: 24px;
