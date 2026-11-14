@@ -184,7 +184,7 @@ const certCategories = [
   {
   title: "AutoCAD",
   detail: "Technical Drafting",
-  image: "images/Autocad.jpg",
+  image: "images/autocad.png",
   link: "certifications/autocad.html",
 },
   {
