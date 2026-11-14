@@ -236,47 +236,24 @@ function renderCertGallery() {
     const category =
       certCategories[(certIndex + i) % certCategories.length];
 
-    certTrack.innerHTML += `
-      <article class="cert-card">
-     <div class="cert-card-top">
-  ${category.image
-    ? `<img class="cert-logo" src="${category.image}" alt="${category.title} logo">`
-    : `<span class="cert-card-icon">${category.icon}</span>`
-  }
-</div>
-${category.image
-  ? `<img class="cert-logo" src="${category.image}" alt="${category.title} logo">`
-  : `<span class="cert-card-icon">${category.icon}</span>`
-}
->        </div>
-        <div class="cert-card-body">
-          <h3>${category.title}</h3>
-          <p>${category.detail}</p>
-          <a class="cert-view" href="${category.link}">
-            VIEW CREDENTIALS &rarr;
-          </a>
-        </div>
-      </article>
-    `;
-  }
+certTrack.innerHTML += `
+  <article class="cert-card">
+    <div class="cert-card-top">
+      ${category.image
+        ? `<img class="cert-logo" src="${category.image}" alt="${category.title} logo">`
+        : `<span class="cert-card-icon">${category.icon}</span>`
+      }
+    </div>
 
-  // Create navigation dots
-  certDots.innerHTML = certCategories
-    .map((category, index) => `
-      <button
-        class="cert-dot ${index === certIndex ? "active" : ""}"
-        aria-label="Show ${category.title}"
-        data-index="${index}">
-      </button>
-    `)
-    .join("");
-
-  certDots.querySelectorAll(".cert-dot").forEach((dot) => {
-    dot.addEventListener("click", () => {
-      certIndex = Number(dot.dataset.index);
-      renderCertGallery();
-    });
-  });
+    <div class="cert-card-body">
+      <h3>${category.title}</h3>
+      <p>${category.detail}</p>
+      <a class="cert-view" href="${category.link}">
+        VIEW CREDENTIALS &rarr;
+      </a>
+    </div>
+  </article>
+`;
 }
 
 if (certPrev && certNext) {
