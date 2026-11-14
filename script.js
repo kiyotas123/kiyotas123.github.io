@@ -188,10 +188,10 @@ const certCategories = [
     link: "certifications/autocad.html",
   },
   {
-    title: "CPR / First Aid",
-    detail: "Safety & Emergency Response",
-    icon: "+",
-    link: "certifications/cpr-first-aid.html",
+   title: "CPR / First Aid",
+  detail: "American Red Cross",
+  image: "images/CPR.jpg",
+  link: "certifications/cpr-first-aid.html",
   },
   {
     title: "SolidProfessor",
