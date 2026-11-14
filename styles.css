@@ -704,7 +704,8 @@ input:focus, textarea:focus { border-color: var(--primary); }
 }
 
 .cert-card-top {
-  min-height: 190px;
+  height: 190px;
+min-height: 190px;
   display: flex;
   align-items: center;
   justify-content: center;
