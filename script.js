@@ -200,12 +200,12 @@ const certCategories = [
     link: "certifications/solidprofessor.html",
   },
   {
-    title: "TEEX",
-    detail: "Workforce & Safety Training",
-    icon: "TX",
-    link: "certifications/teex.html",
-  },
-  {
+  title: "TEEX",
+  detail: "Workforce & Safety Training",
+  image: "images/teex.jpg",
+  link: "certifications/teex.html",
+},
+  
     title: "MSI",
     detail: "Management & Strategy Training",
     icon: "MSI",
