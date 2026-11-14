@@ -59,6 +59,14 @@ const skills = [
 const roles = [
   {
     org: "University of Houston Recreation Center",
+    title: "Red Mankin Drill Team Member",
+    period: "11/2026 — Present",
+    description:
+      "Selected for a paid position originally limited to non-work-study students. Advocated for eligibility and gained management approval. Assist with emergency drills and teach CPR to new hires.",
+    skills: ["Emergency Preparedness", "CPR Training", "Teamwork"],
+  },
+  {
+    org: "University of Houston Recreation Center",
     title: "Desk Attendant",
     period: "09/2026 — Present",
     description:
