@@ -194,11 +194,12 @@ const certCategories = [
   link: "certifications/cpr-first-aid.html",
   },
   {
-    title: "SolidProfessor",
-    detail: "Engineering Software Training",
-    icon: "SP",
-    link: "certifications/solidprofessor.html",
-  },
+   {
+  title: "SolidProfessor",
+  detail: "Engineering Software Training",
+  image: "images/Solidprofessor.jpg",
+  link: "certifications/solidprofessor.html",
+},
   {
     title: "TEEX",
     detail: "Workforce & Safety Training",
