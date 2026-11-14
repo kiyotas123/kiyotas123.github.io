@@ -729,13 +729,17 @@ min-height: 190px;
 
 .cert-card-icon {
    .cert-logo {
-    position: relative;
-  width: 35px;
-  height: 35px;
+   #certifications .cert-card-top img.cert-logo {
+  width: 88px !important;
+  height: 88px !important;
+  max-width: 88px;
+  max-height: 88px;
   object-fit: contain;
   background: #fff;
-  padding: 3px;
+  padding: 5px;
   box-sizing: border-box;
+  flex: 0 0 auto;
+  position: relative;
 }
   position: relative;
   display: grid;
