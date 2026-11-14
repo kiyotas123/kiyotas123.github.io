@@ -182,11 +182,11 @@ const certCategories = [
   link: "certifications/solidworks.html",
 },
   {
-    title: "AutoCAD",
-    detail: "Technical Drafting",
-    icon: "CAD",
-    link: "certifications/autocad.html",
-  },
+  title: "AutoCAD",
+  detail: "Technical Drafting",
+  image: "images/Autocad.jpg",
+  link: "certifications/autocad.html",
+},
   {
     title: "CPR / First Aid",
     detail: "American Red Cross",
