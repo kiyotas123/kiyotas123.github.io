@@ -175,12 +175,12 @@ document.getElementById("timeline").append(
 // ---------- CERTIFICATION GALLERY ----------
 
 const certCategories = [
-  {
-    title: "SOLIDWORKS",
-    detail: "CAD & 3D Design",
-    icon: "SW",
-    link: "certifications/solidworks.html",
-  },
+{
+  title: "SOLIDWORKS",
+  detail: "CAD & 3D Design",
+  image: "images/Solidwork.jpg",
+  link: "certifications/solidworks.html",
+},
   {
     title: "AutoCAD",
     detail: "Technical Drafting",
