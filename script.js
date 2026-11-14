@@ -239,10 +239,10 @@ function renderCertGallery() {
     certTrack.innerHTML += `
       <article class="cert-card">
         <div class="cert-card-top">
-<img
-  class="cert-logo"
-  src="${category.image || ''}"
-  alt="${category.title} logo"
+${category.image
+  ? `<img class="cert-logo" src="${category.image}" alt="${category.title} logo">`
+  : `<span class="cert-card-icon">${category.icon}</span>`
+}
 >        </div>
         <div class="cert-card-body">
           <h3>${category.title}</h3>
