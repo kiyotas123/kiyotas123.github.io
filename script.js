@@ -188,18 +188,17 @@ const certCategories = [
     link: "certifications/autocad.html",
   },
   {
-   title: "CPR / First Aid",
-  detail: "American Red Cross",
-  image: "images/CPR.jpg",
-  link: "certifications/cpr-first-aid.html",
+    title: "CPR / First Aid",
+    detail: "American Red Cross",
+    image: "images/CPR.jpg",
+    link: "certifications/cpr-first-aid.html",
   },
   {
-   {
-  title: "SolidProfessor",
-  detail: "Engineering Software Training",
-  image: "images/Solidprofessor.jpg",
-  link: "certifications/solidprofessor.html",
-},
+    title: "SolidProfessor",
+    detail: "Engineering Software Training",
+    image: "images/Solidprofessor.jpg",
+    link: "certifications/solidprofessor.html",
+  },
   {
     title: "TEEX",
     detail: "Workforce & Safety Training",
