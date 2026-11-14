@@ -250,3 +250,12 @@ form.addEventListener("submit", (e) => {
   status.textContent = "Opening your email app to send the message.";
   form.reset();
 });
+// Close the latest update popup
+const closeUpdate = document.getElementById("closeUpdate");
+const siteUpdate = document.getElementById("siteUpdate");
+
+if (closeUpdate && siteUpdate) {
+  closeUpdate.addEventListener("click", () => {
+    siteUpdate.style.display = "none";
+  });
+}
