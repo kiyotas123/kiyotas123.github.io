@@ -205,7 +205,7 @@ const certCategories = [
   image: "images/teex.jpg",
   link: "certifications/teex.html",
 },
-  
+   {
     title: "MSI",
     detail: "Management & Strategy Training",
     icon: "MSI",
