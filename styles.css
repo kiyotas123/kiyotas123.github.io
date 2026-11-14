@@ -569,7 +569,7 @@ input:focus, textarea:focus { border-color: var(--primary); }
   object-fit: cover;
   display: block;
 }
-  }
+   
 }
 /* Latest Website Update Popup */
 .site-update {
