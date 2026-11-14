@@ -229,33 +229,50 @@ let certIndex = 0;
 function renderCertGallery() {
   if (!certTrack || !certDots) return;
 
-  // Show three categories at a time
   certTrack.innerHTML = "";
 
   for (let i = 0; i < 3; i++) {
     const category =
       certCategories[(certIndex + i) % certCategories.length];
 
-certTrack.innerHTML += `
-  <article class="cert-card">
-    <div class="cert-card-top">
-      ${category.image
-        ? `<img class="cert-logo" src="${category.image}" alt="${category.title} logo">`
-        : `<span class="cert-card-icon">${category.icon}</span>`
-      }
-    </div>
+    const imageContent = category.image
+      ? `<img class="cert-logo" src="${category.image}" alt="${category.title} logo">`
+      : `<span class="cert-card-icon">${category.icon}</span>`;
 
-    <div class="cert-card-body">
-      <h3>${category.title}</h3>
-      <p>${category.detail}</p>
-      <a class="cert-view" href="${category.link}">
-        VIEW CREDENTIALS &rarr;
-      </a>
-    </div>
-  </article>
-`;
+    certTrack.innerHTML += `
+      <article class="cert-card">
+        <div class="cert-card-top">
+          ${imageContent}
+        </div>
+
+        <div class="cert-card-body">
+          <h3>${category.title}</h3>
+          <p>${category.detail}</p>
+          <a class="cert-view" href="${category.link}">
+            VIEW CREDENTIALS &rarr;
+          </a>
+        </div>
+      </article>
+    `;
+  }
+
+  certDots.innerHTML = certCategories
+    .map((category, index) => `
+      <button
+        class="cert-dot ${index === certIndex ? "active" : ""}"
+        aria-label="Show ${category.title}"
+        data-index="${index}">
+      </button>
+    `)
+    .join("");
+
+  certDots.querySelectorAll(".cert-dot").forEach((dot) => {
+    dot.addEventListener("click", () => {
+      certIndex = Number(dot.dataset.index);
+      renderCertGallery();
+    });
+  });
 }
-
 if (certPrev && certNext) {
   certPrev.addEventListener("click", () => {
     certIndex =
