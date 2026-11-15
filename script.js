@@ -187,8 +187,11 @@ const certCategories = [
 {
   title: "AutoCAD",
   detail: "Technical Drafting",
-  image: "images/autocad.png",
-  link: "certifications/autocad.html",
+  image: "images/Autocad.jpg",
+  certificateImage: "images/Autodesk.png",
+  issuer: "Autodesk",
+  date: "May 9, 2025",
+  credential: "AutoCAD Certification",
 },
  {
   title: "AutoCAD",
