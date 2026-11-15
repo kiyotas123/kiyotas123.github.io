@@ -174,7 +174,7 @@ document.getElementById("timeline").append(
 
 // ---------- CERTIFICATION GALLERY ----------
 
-onst certCategories = [
+const certCategories = [
   {
     title: "SOLIDWORKS",
     detail: "CAD & 3D Design",
