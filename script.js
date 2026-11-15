@@ -212,12 +212,68 @@ const certCategories = [
     },
   ],
 },
-  {
-    title: "SolidProfessor",
-    detail: "Engineering Software Training",
-    image: "images/Solidprofessor.jpg",
-    link: "certifications/solidprofessor.html",
-  },
+{
+  title: "SolidProfessor",
+  detail: "Engineering Software Training",
+  image: "images/Solidprofessor.jpg",
+  certificates: [
+    {
+      credential: "Onshape Beginner to Certification",
+      date: "2021",
+      image: "images/ONSHAPEBeginner.png",
+    },
+    {
+      credential: "Introduction to 3D Printing",
+      date: "2017",
+      image: "images/IntroTo3DPrinting.png",
+    },
+    {
+      credential: "AutoCAD Beginner to Certification",
+      date: "2023",
+      image: "images/AutocadBeginner.png",
+    },
+    {
+      credential: "AutoCAD Essentials",
+      date: "2023",
+      image: "images/AutocadEssentials.png",
+    },
+    {
+      credential: "AutoCAD User Certification Prep Course",
+      date: "2023",
+      image: "images/AutocadUserPrepCourse.png",
+    },
+    {
+      credential: "Introduction to AutoCAD",
+      date: "2023",
+      image: "images/IntroToAutoCad.png",
+    },
+    {
+      credential: "MATLAB Essentials",
+      date: "2016",
+      image: "images/MATLABEssentials.png",
+    },
+    {
+      credential: "MATLAB Advanced Concepts",
+      date: "2016",
+      image: "images/MATLABAdvancedConcepts.png",
+    },
+    {
+      credential: "Introduction to MATLAB",
+      date: "2016",
+      image: "images/IntrotoMATLAB.png",
+    },
+    {
+      credential: "3D Printing with MakerBot",
+      date: "2016",
+      image: "images/3DPrintingWithMakerbot.png",
+    },
+    {
+      credential: "Learn to Use SolidProfessor as an Instructor",
+      date: "Date not provided",
+      image: "images/LearnToUseSolidprofessor.png",
+    },
+  ],
+},
   {
     title: "TEEX",
     detail: "Workforce & Safety Training",
