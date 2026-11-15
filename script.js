@@ -206,9 +206,9 @@ const certCategories = [
   link: "certifications/teex.html",
 },
    {
-    title: "MSI",
+     title: "MSI",
   detail: "Management & Strategy Training",
-  icon: "MSI",
+  image: "images/MSI.jpg",
   link: "certifications/msi.html",
   },
   {
