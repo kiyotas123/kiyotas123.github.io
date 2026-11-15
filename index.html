@@ -289,5 +289,30 @@
 
 <script src="script.js" defer></script>
 
+<!-- CERTIFICATION POPUP -->
+<div class="cert-modal" id="certModal" aria-hidden="true">
+  <div class="cert-modal-content" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
+
+    <button class="cert-modal-close" id="certModalClose" aria-label="Close popup">
+      &times;
+    </button>
+
+    <p class="label accent">CERTIFICATION DETAILS</p>
+
+    <h2 id="certModalTitle">Certification Name</h2>
+
+    <div class="cert-modal-image">
+      <img id="certModalImage" src="" alt="Certificate">
+    </div>
+
+    <div class="cert-modal-details">
+      <p><strong>Issuing Organization:</strong> <span id="certModalIssuer"></span></p>
+      <p><strong>Date Earned:</strong> <span id="certModalDate"></span></p>
+      <p><strong>Credential:</strong> <span id="certModalCredential"></span></p>
+    </div>
+
+  </div>
+</div>
+
 </body>
 </html>
