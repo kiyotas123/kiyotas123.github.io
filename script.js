@@ -311,14 +311,16 @@ renderCertGallery();
 
 // ---------- CERTIFICATION POPUP ----------
 
+
+// ---------- CERTIFICATION POPUP ----------
+
 const certModal = document.getElementById("certModal");
 const certModalClose = document.getElementById("certModalClose");
 const certModalTitle = document.getElementById("certModalTitle");
-const certModalImage = document.getElementById("certModalImage");
-const certModalDetails = document.getElementById("certModalDetails");
+const certModalGallery = document.getElementById("certModalGallery");
 
-// Open certificate popup
-if (certTrack && certModal) {
+// Open certification popup
+if (certTrack && certModal && certModalGallery) {
   certTrack.addEventListener("click", (e) => {
     const button = e.target.closest(".cert-view");
     if (!button) return;
@@ -328,46 +330,108 @@ if (certTrack && certModal) {
 
     if (!category) return;
 
-    // CPR: Display both certificates
-    if (category.certificates) {
-      certModalImage.innerHTML = `
-        <div class="cert-multi-grid">
-          ${category.certificates.map(cert => `
-            <div class="cert-multi-card">
-              <img src="${cert.image}" alt="${cert.credential}">
-              <h3>${cert.credential}</h3>
-              <p><strong>Date Earned:</strong> ${cert.date}</p>
-              <p><strong>Valid Until:</strong> ${cert.expiration}</p>
-            </div>
-          `).join("")}
-        </div>
-      `;
+    // Convert single certificates into the same format as multiple certificates
+    const certificates = category.certificates || (
+      category.certificateImage
+        ? [{
+            image: category.certificateImage,
+            credential: category.credential,
+            date: category.date,
+            issuer: category.issuer,
+          }]
+        : []
+    );
 
-      certModalDetails.innerHTML = `
-        <p><strong>Conducted by:</strong> University of Houston, Department of Campus Recreation</p>
-      `;
-    }
-
-    // SOLIDWORKS and AutoCAD: Display one certificate
-    else if (category.certificateImage) {
-      certModalImage.innerHTML = `
-        <img class="cert-single-image"
-             src="${category.certificateImage}"
-             alt="${category.credential}">
-      `;
-
-      certModalDetails.innerHTML = `
-        <p><strong>Issuing Organization:</strong> ${category.issuer}</p>
-        <p><strong>Date Earned:</strong> ${category.date}</p>
-        <p><strong>Credential:</strong> ${category.credential}</p>
-      `;
-    }
-
-    else {
-      return;
-    }
+    if (!certificates.length) return;
 
     certModalTitle.textContent = category.title;
+
+    // Show credential cards
+    certModalGallery.innerHTML = `
+      <div class="cert-credential-grid">
+        ${certificates.map((cert, i) => `
+          <article class="cert-credential-card">
+            <div class="cert-credential-icon">
+              <span>${certificates.length > 1 ? "01".slice(0, 1) + String(i + 1) : "★"}</span>
+            </div>
+
+            <h3>${cert.credential}</h3>
+
+            <p class="cert-earned">
+              Earned: ${cert.date || "Date not provided"}
+            </p>
+
+            <button
+              class="cert-view"
+              type="button"
+              data-view-cert="${i}">
+              VIEW CREDENTIAL →
+            </button>
+          </article>
+        `).join("")}
+      </div>
+
+      <div class="cert-gallery-footer">
+        <p>ISSUED BY ${category.issuer || "UNIVERSITY OF HOUSTON CAMPUS RECREATION"}</p>
+        ${certificates.some(cert => cert.expiration)
+          ? `<p>VALID UNTIL ${certificates.find(cert => cert.expiration).expiration}</p>`
+          : ""}
+      </div>
+    `;
+
+    // Open an individual certificate
+    certModalGallery.onclick = (event) => {
+      const viewButton = event.target.closest("[data-view-cert]");
+      if (!viewButton) return;
+
+      const cert = certificates[Number(viewButton.dataset.viewCert)];
+      if (!cert) return;
+
+      certModalGallery.innerHTML = `
+        <button class="cert-back" type="button">
+          ← BACK TO CREDENTIALS
+        </button>
+
+        <div class="cert-single-view">
+          <img src="${cert.image}" alt="${cert.credential}">
+        </div>
+
+        <div class="cert-single-info">
+          <h3>${cert.credential}</h3>
+          <p>Earned: ${cert.date || "Date not provided"}</p>
+          ${cert.expiration ? `<p>Valid until: ${cert.expiration}</p>` : ""}
+        </div>
+      `;
+    };
+
+    // Return to credential cards
+    certModalGallery.addEventListener("click", (event) => {
+      if (!event.target.closest(".cert-back")) return;
+
+      certModalGallery.innerHTML = `
+        <div class="cert-credential-grid">
+          ${certificates.map((cert, i) => `
+            <article class="cert-credential-card">
+              <div class="cert-credential-icon">
+                <span>${certificates.length > 1 ? "0" + (i + 1) : "★"}</span>
+              </div>
+              <h3>${cert.credential}</h3>
+              <p class="cert-earned">Earned: ${cert.date || "Date not provided"}</p>
+              <button class="cert-view" type="button" data-view-cert="${i}">
+                VIEW CREDENTIAL →
+              </button>
+            </article>
+          `).join("")}
+        </div>
+        <div class="cert-gallery-footer">
+          <p>ISSUED BY ${category.issuer || "UNIVERSITY OF HOUSTON CAMPUS RECREATION"}</p>
+          ${certificates.some(cert => cert.expiration)
+            ? `<p>VALID UNTIL ${certificates.find(cert => cert.expiration).expiration}</p>`
+            : ""}
+        </div>
+      `;
+    });
+
     certModal.classList.add("open");
     certModal.setAttribute("aria-hidden", "false");
   });
