@@ -290,6 +290,54 @@ if (certPrev && certNext) {
 }
 
 renderCertGallery();
+// ---------- CERTIFICATION POPUP ----------
+
+const certModal = document.getElementById("certModal");
+const certModalClose = document.getElementById("certModalClose");
+const certModalTitle = document.getElementById("certModalTitle");
+const certModalImage = document.getElementById("certModalImage");
+const certModalIssuer = document.getElementById("certModalIssuer");
+const certModalDate = document.getElementById("certModalDate");
+const certModalCredential = document.getElementById("certModalCredential");
+
+// Open certificate popup
+certTrack.addEventListener("click", (e) => {
+  const button = e.target.closest(".cert-view");
+  if (!button) return;
+
+  const index = Number(button.dataset.certIndex);
+  const category = certCategories[index];
+
+  if (!category || !category.certificateImage) return;
+
+  certModalTitle.textContent = category.title;
+  certModalImage.src = category.certificateImage;
+  certModalImage.alt = category.credential;
+  certModalIssuer.textContent = category.issuer;
+  certModalDate.textContent = category.date;
+  certModalCredential.textContent = category.credential;
+
+  certModal.classList.add("open");
+  certModal.setAttribute("aria-hidden", "false");
+});
+
+// Close popup
+function closeCertModal() {
+  certModal.classList.remove("open");
+  certModal.setAttribute("aria-hidden", "true");
+}
+
+certModalClose.addEventListener("click", closeCertModal);
+
+certModal.addEventListener("click", (e) => {
+  if (e.target === certModal) closeCertModal();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && certModal.classList.contains("open")) {
+    closeCertModal();
+  }
+});
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
