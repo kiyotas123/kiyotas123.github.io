@@ -308,18 +308,70 @@ if (certPrev && certNext) {
 renderCertGallery();
 // ---------- CERTIFICATION POPUP ----------
 
-
-// ---------- CERTIFICATION POPUP ----------
-
-
-// ---------- CERTIFICATION POPUP ----------
-
 const certModal = document.getElementById("certModal");
 const certModalClose = document.getElementById("certModalClose");
 const certModalTitle = document.getElementById("certModalTitle");
 const certModalGallery = document.getElementById("certModalGallery");
 
-// Open certification popup
+function transitionCertView(newContent) {
+  certModalGallery.classList.add("is-transitioning");
+
+  setTimeout(() => {
+    certModalGallery.innerHTML = newContent;
+    certModalGallery.classList.remove("is-transitioning");
+  }, 250);
+}
+
+function renderCredentialCards(category, certificates) {
+  certModalGallery.innerHTML = `
+    <div class="cert-credential-grid">
+      ${certificates.map((cert, i) => `
+        <article class="cert-credential-card">
+          <div class="cert-credential-icon">
+            <span>${certificates.length > 1 ? "0" + (i + 1) : "★"}</span>
+          </div>
+
+          <h3>${cert.credential}</h3>
+
+          <p class="cert-earned">
+            Earned: ${cert.date || "Date not provided"}
+          </p>
+
+          <button class="cert-view" type="button" data-view-cert="${i}">
+            VIEW CREDENTIAL →
+          </button>
+        </article>
+      `).join("")}
+    </div>
+
+    <div class="cert-gallery-footer">
+      <p>ISSUED BY ${category.issuer || "UNIVERSITY OF HOUSTON CAMPUS RECREATION"}</p>
+      ${certificates.some(cert => cert.expiration)
+        ? `<p>VALID UNTIL ${certificates.find(cert => cert.expiration).expiration}</p>`
+        : ""}
+    </div>
+  `;
+}
+
+function renderSingleCertificate(cert) {
+  return `
+    <button class="cert-back" type="button">
+      ← BACK TO CREDENTIALS
+    </button>
+
+    <div class="cert-single-view">
+      <img src="${cert.image}" alt="${cert.credential}">
+    </div>
+
+    <div class="cert-single-info">
+      <h3>${cert.credential}</h3>
+      <p>Earned: ${cert.date || "Date not provided"}</p>
+      ${cert.expiration ? `<p>Valid until: ${cert.expiration}</p>` : ""}
+    </div>
+  `;
+}
+
+// Open popup
 if (certTrack && certModal && certModalGallery) {
   certTrack.addEventListener("click", (e) => {
     const button = e.target.closest(".cert-view");
@@ -330,7 +382,6 @@ if (certTrack && certModal && certModalGallery) {
 
     if (!category) return;
 
-    // Convert single certificates into the same format as multiple certificates
     const certificates = category.certificates || (
       category.certificateImage
         ? [{
@@ -345,101 +396,65 @@ if (certTrack && certModal && certModalGallery) {
     if (!certificates.length) return;
 
     certModalTitle.textContent = category.title;
-
-    // Show credential cards
-    certModalGallery.innerHTML = `
-      <div class="cert-credential-grid">
-        ${certificates.map((cert, i) => `
-          <article class="cert-credential-card">
-            <div class="cert-credential-icon">
-              <span>${certificates.length > 1 ? "01".slice(0, 1) + String(i + 1) : "★"}</span>
-            </div>
-
-            <h3>${cert.credential}</h3>
-
-            <p class="cert-earned">
-              Earned: ${cert.date || "Date not provided"}
-            </p>
-
-            <button
-              class="cert-view"
-              type="button"
-              data-view-cert="${i}">
-              VIEW CREDENTIAL →
-            </button>
-          </article>
-        `).join("")}
-      </div>
-
-      <div class="cert-gallery-footer">
-        <p>ISSUED BY ${category.issuer || "UNIVERSITY OF HOUSTON CAMPUS RECREATION"}</p>
-        ${certificates.some(cert => cert.expiration)
-          ? `<p>VALID UNTIL ${certificates.find(cert => cert.expiration).expiration}</p>`
-          : ""}
-      </div>
-    `;
-
-    // Open an individual certificate
-    certModalGallery.onclick = (event) => {
-      const viewButton = event.target.closest("[data-view-cert]");
-      if (!viewButton) return;
-
-      const cert = certificates[Number(viewButton.dataset.viewCert)];
-      if (!cert) return;
-
-      certModalGallery.innerHTML = `
-        <button class="cert-back" type="button">
-          ← BACK TO CREDENTIALS
-        </button>
-
-        <div class="cert-single-view">
-          <img src="${cert.image}" alt="${cert.credential}">
-        </div>
-
-        <div class="cert-single-info">
-          <h3>${cert.credential}</h3>
-          <p>Earned: ${cert.date || "Date not provided"}</p>
-          ${cert.expiration ? `<p>Valid until: ${cert.expiration}</p>` : ""}
-        </div>
-      `;
-    };
-
-    // Return to credential cards
-    certModalGallery.addEventListener("click", (event) => {
-      if (!event.target.closest(".cert-back")) return;
-
-      certModalGallery.innerHTML = `
-        <div class="cert-credential-grid">
-          ${certificates.map((cert, i) => `
-            <article class="cert-credential-card">
-              <div class="cert-credential-icon">
-                <span>${certificates.length > 1 ? "0" + (i + 1) : "★"}</span>
-              </div>
-              <h3>${cert.credential}</h3>
-              <p class="cert-earned">Earned: ${cert.date || "Date not provided"}</p>
-              <button class="cert-view" type="button" data-view-cert="${i}">
-                VIEW CREDENTIAL →
-              </button>
-            </article>
-          `).join("")}
-        </div>
-        <div class="cert-gallery-footer">
-          <p>ISSUED BY ${category.issuer || "UNIVERSITY OF HOUSTON CAMPUS RECREATION"}</p>
-          ${certificates.some(cert => cert.expiration)
-            ? `<p>VALID UNTIL ${certificates.find(cert => cert.expiration).expiration}</p>`
-            : ""}
-        </div>
-      `;
-    });
+    renderCredentialCards(category, certificates);
 
     certModal.classList.add("open");
     certModal.setAttribute("aria-hidden", "false");
+  });
+
+  // Handle credential buttons and back button
+  certModalGallery.addEventListener("click", (e) => {
+    const viewButton = e.target.closest("[data-view-cert]");
+
+    if (viewButton) {
+      const index = Number(viewButton.dataset.viewCert);
+      const category = certCategories.find(
+        item => item.title === certModalTitle.textContent
+      );
+
+      if (!category) return;
+
+      const certificates = category.certificates || [{
+        image: category.certificateImage,
+        credential: category.credential,
+        date: category.date,
+        issuer: category.issuer,
+      }];
+
+      const cert = certificates[index];
+      if (!cert) return;
+
+      transitionCertView(renderSingleCertificate(cert));
+      return;
+    }
+
+    if (e.target.closest(".cert-back")) {
+      const category = certCategories.find(
+        item => item.title === certModalTitle.textContent
+      );
+
+      if (!category) return;
+
+      const certificates = category.certificates || [{
+        image: category.certificateImage,
+        credential: category.credential,
+        date: category.date,
+        issuer: category.issuer,
+      }];
+
+      transitionCertView("");
+
+      setTimeout(() => {
+        renderCredentialCards(category, certificates);
+      }, 250);
+    }
   });
 }
 
 // Close popup
 function closeCertModal() {
   if (!certModal) return;
+
   certModal.classList.remove("open");
   certModal.setAttribute("aria-hidden", "true");
 }
@@ -460,7 +475,6 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-document.getElementById("year").textContent = new Date().getFullYear();
 
 /* ---------- Mobile menu ---------- */
 
