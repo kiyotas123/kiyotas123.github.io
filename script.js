@@ -193,12 +193,25 @@ const certCategories = [
     date: "May 9, 2025",
     credential: "AutoCAD Certification",
   },
-  {
-    title: "CPR / First Aid",
-    detail: "American Red Cross",
-    image: "images/CPR.jpg",
-    link: "certifications/cpr-first-aid.html",
-  },
+{
+  title: "CPR / First Aid",
+  detail: "First Aid, CPR & AED Training",
+  image: "images/CPR.jpg",
+  certificates: [
+    {
+      image: "images/CPRCert.png",
+      credential: "Adult and Pediatric First Aid/CPR/AED",
+      date: "October 9, 2026",
+      expiration: "October 9, 2028",
+    },
+    {
+      image: "images/InstructorCert.png",
+      credential: "First Aid/CPR/AED Instructor r.25",
+      date: "October 9, 2026",
+      expiration: "October 9, 2028",
+    },
+  ],
+},
   {
     title: "SolidProfessor",
     detail: "Engineering Software Training",
