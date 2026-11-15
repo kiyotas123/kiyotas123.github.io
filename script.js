@@ -312,6 +312,7 @@ const certModal = document.getElementById("certModal");
 const certModalClose = document.getElementById("certModalClose");
 const certModalTitle = document.getElementById("certModalTitle");
 const certModalImage = document.getElementById("certModalImage");
+const certModalImagePreview = document.getElementById("certModalImagePreview");
 const certModalIssuer = document.getElementById("certModalIssuer");
 const certModalDate = document.getElementById("certModalDate");
 const certModalCredential = document.getElementById("certModalCredential");
