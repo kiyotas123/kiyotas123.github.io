@@ -1190,3 +1190,98 @@ input:focus, textarea:focus { border-color: var(--primary); }
     transition: none;
   }
 }
+
+/* ---------- FUTURISTIC CREDENTIAL INTERFACE ---------- */
+
+.cert-modal-content {
+  background:
+    radial-gradient(ellipse at top right, rgba(35, 58, 82, 0.2), transparent 45%),
+    #0b1017;
+  border-color: #34465b;
+}
+
+.cert-credential-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(28, 42, 58, 0.8), rgba(13, 19, 27, 0.98));
+  border: 1px solid #34465b;
+  border-radius: 3px;
+  padding: 26px;
+}
+
+/* Technical corner accents */
+.cert-credential-card::before,
+.cert-credential-card::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 2px;
+  background: var(--primary);
+  opacity: 0.8;
+}
+
+.cert-credential-card::before {
+  top: 0;
+  left: 0;
+}
+
+.cert-credential-card::after {
+  right: 0;
+  bottom: 0;
+}
+
+/* Number badge */
+.cert-credential-icon {
+  width: 54px;
+  height: 54px;
+  background: rgba(227, 27, 35, 0.1);
+  border: 1px solid rgba(227, 27, 35, 0.55);
+  box-shadow: 0 0 18px rgba(227, 27, 35, 0.1);
+}
+
+/* Card hover */
+.cert-credential-card:hover {
+  background:
+    linear-gradient(145deg, rgba(35, 53, 72, 0.95), rgba(15, 23, 33, 1));
+  border-color: var(--primary);
+  box-shadow:
+    0 0 20px rgba(227, 27, 35, 0.12),
+    inset 0 0 25px rgba(227, 27, 35, 0.035);
+}
+
+/* Technical typography */
+.cert-credential-card h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.45;
+}
+
+.cert-earned {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.035em;
+}
+
+/* Credential access link */
+.cert-credential-card .cert-view {
+  font-family: var(--font-display);
+  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+}
+
+.cert-credential-card .cert-view:hover {
+  text-shadow: 0 0 12px rgba(227, 27, 35, 0.7);
+}
+
+/* Footer */
+.cert-gallery-footer {
+  border-top: 1px solid #34465b;
+  position: relative;
+}
+
+.cert-gallery-footer p {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
