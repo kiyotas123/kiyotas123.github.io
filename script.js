@@ -213,9 +213,9 @@ const certCategories = [
   },
   {
     title: "EVERFI",
-    detail: "Professional Development",
-    icon: "E",
-    link: "certifications/everfi.html",
+  detail: "Professional Development",
+  image: "images/everfi.png",
+  link: "certifications/everfi.html",
   },
 ];
 
