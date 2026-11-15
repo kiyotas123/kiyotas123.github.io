@@ -223,6 +223,11 @@ const certCategories = [
   image: "images/Solidprofessor.jpg",
   certificates: [
     {
+  title: "SolidProfessor",
+  detail: "Engineering Software Training",
+  image: "images/Solidprofessor.jpg",
+  certificates: [
+    {
       credential: "Onshape Beginner to Certification",
       date: "September 14, 2024",
       image: "images/ONSHAPEBeginner.png",
@@ -276,9 +281,6 @@ const certCategories = [
       credential: "Learn to Use SolidProfessor as an Instructor",
       date: "September 13, 2024",
       image: "images/LearnToUseSolidprofessor.png",
-    },
-  ],
-},
     },
   ],
 },
