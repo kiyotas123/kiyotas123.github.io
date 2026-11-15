@@ -213,68 +213,68 @@ const certCategories = [
     ],
   },
   {
-    title: "SolidProfessor",
-    detail: "Engineering Software Training",
-    image: "images/Solidprofessor.jpg",
-    certificates: [
-      {
-        credential: "Onshape Beginner to Certification",
-        date: "September 14, 2024",
-        image: "images/ONSHAPEBeginner.png",
-      },
-      {
-        credential: "Introduction to 3D Printing",
-        date: "September 3, 2024",
-        image: "images/IntroTo3DPrinting.png",
-      },
-      {
-        credential: "AutoCAD Beginner to Certification",
-        date: "February 8, 2023",
-        image: "images/AutocadBeginner.png",
-      },
-      {
-        credential: "AutoCAD Essentials",
-        date: "February 7, 2023",
-        image: "images/AutocadEssentials.png",
-      },
-      {
-        credential: "AutoCAD User Certification Prep Course",
-        date: "January 30, 2023",
-        image: "images/AutocadUserPrepCourse.png",
-      },
-      {
-        credential: "Introduction to AutoCAD",
-        date: "February 6, 2023",
-        image: "images/IntroToAutoCad.png",
-      },
-      {
-        credential: "MATLAB Essentials",
-        date: "February 1, 2023",
-        image: "images/MATLABEssentials.png",
-      },
-      {
-        credential: "MATLAB Advanced Concepts",
-        date: "February 1, 2023",
-        image: "images/MATLABAdvancedConcepts.png",
-      },
-      {
-        credential: "Introduction to MATLAB",
-        date: "February 6, 2023",
-        image: "images/IntrotoMATLAB.png",
-      },
-      {
-        credential: "3D Printing with MakerBot",
-        date: "September 11, 2024",
-        image: "images/3DPrintingWithMakerbot.png",
-      },
-      {
-        credential: "Learn to Use SolidProfessor as an Instructor",
-        date: "September 13, 2024",
-        image: "images/LearnToUseSolidprofessor.png",
-      },
-    ],
-  },
-  {
+  title: "SolidProfessor",
+  detail: "Engineering Software Training",
+  image: "images/Solidprofessor.jpg",
+  certificates: [
+    {
+      credential: "Onshape Beginner to Certification",
+      date: "September 14, 2024",
+      image: "images/ONSHAPEBeginner.png",
+    },
+    {
+      credential: "Introduction to 3D Printing",
+      date: "September 3, 2024",
+      image: "images/IntroTo3DPrinting.png",
+    },
+    {
+      credential: "AutoCAD Beginner to Certification",
+      date: "February 8, 2023",
+      image: "images/AutocadBeginner.png",
+    },
+    {
+      credential: "AutoCAD Essentials",
+      date: "February 7, 2023",
+      image: "images/AutocadEssentials.png",
+    },
+    {
+      credential: "AutoCAD User Certification Prep Course",
+      date: "January 30, 2023",
+      image: "images/AutocadUserPrepCourse.png",
+    },
+    {
+      credential: "Introduction to AutoCAD",
+      date: "February 6, 2023",
+      image: "images/IntroToAutoCad.png",
+    },
+    {
+      credential: "MATLAB Essentials",
+      date: "February 1, 2023",
+      image: "images/MATLABEssentials.png",
+    },
+    {
+      credential: "MATLAB Advanced Concepts",
+      date: "February 1, 2023",
+      image: "images/MATLABAdvancedConcepts.png",
+    },
+    {
+      credential: "Introduction to MATLAB",
+      date: "February 6, 2023",
+      image: "images/IntrotoMATLAB.png",
+    },
+    {
+      credential: "3D Printing with MakerBot",
+      date: "September 11, 2024",
+      image: "images/3DPrintingWithMakerbot.png",
+    },
+    {
+      credential: "Learn to Use SolidProfessor as an Instructor",
+      date: "September 13, 2024",
+      image: "images/LearnToUseSolidprofessor.png",
+    },
+  ],
+},
+   {
     title: "TEEX",
     detail: "Workforce & Safety Training",
     image: "images/teex.jpg",
