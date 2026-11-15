@@ -308,50 +308,90 @@ if (certPrev && certNext) {
 renderCertGallery();
 // ---------- CERTIFICATION POPUP ----------
 
+
+// ---------- CERTIFICATION POPUP ----------
+
 const certModal = document.getElementById("certModal");
 const certModalClose = document.getElementById("certModalClose");
 const certModalTitle = document.getElementById("certModalTitle");
 const certModalImage = document.getElementById("certModalImage");
-const certModalImagePreview = document.getElementById("certModalImagePreview");
-const certModalIssuer = document.getElementById("certModalIssuer");
-const certModalDate = document.getElementById("certModalDate");
-const certModalCredential = document.getElementById("certModalCredential");
+const certModalDetails = document.getElementById("certModalDetails");
 
 // Open certificate popup
-certTrack.addEventListener("click", (e) => {
-  const button = e.target.closest(".cert-view");
-  if (!button) return;
+if (certTrack && certModal) {
+  certTrack.addEventListener("click", (e) => {
+    const button = e.target.closest(".cert-view");
+    if (!button) return;
 
-  const index = Number(button.dataset.certIndex);
-  const category = certCategories[index];
+    const index = Number(button.dataset.certIndex);
+    const category = certCategories[index];
 
-  if (!category || !category.certificateImage) return;
+    if (!category) return;
 
-  certModalTitle.textContent = category.title;
-  certModalImage.src = category.certificateImage;
-  certModalImage.alt = category.credential;
-  certModalIssuer.textContent = category.issuer;
-  certModalDate.textContent = category.date;
-  certModalCredential.textContent = category.credential;
+    // CPR: Display both certificates
+    if (category.certificates) {
+      certModalImage.innerHTML = `
+        <div class="cert-multi-grid">
+          ${category.certificates.map(cert => `
+            <div class="cert-multi-card">
+              <img src="${cert.image}" alt="${cert.credential}">
+              <h3>${cert.credential}</h3>
+              <p><strong>Date Earned:</strong> ${cert.date}</p>
+              <p><strong>Valid Until:</strong> ${cert.expiration}</p>
+            </div>
+          `).join("")}
+        </div>
+      `;
 
-  certModal.classList.add("open");
-  certModal.setAttribute("aria-hidden", "false");
-});
+      certModalDetails.innerHTML = `
+        <p><strong>Conducted by:</strong> University of Houston, Department of Campus Recreation</p>
+      `;
+    }
+
+    // SOLIDWORKS and AutoCAD: Display one certificate
+    else if (category.certificateImage) {
+      certModalImage.innerHTML = `
+        <img class="cert-single-image"
+             src="${category.certificateImage}"
+             alt="${category.credential}">
+      `;
+
+      certModalDetails.innerHTML = `
+        <p><strong>Issuing Organization:</strong> ${category.issuer}</p>
+        <p><strong>Date Earned:</strong> ${category.date}</p>
+        <p><strong>Credential:</strong> ${category.credential}</p>
+      `;
+    }
+
+    else {
+      return;
+    }
+
+    certModalTitle.textContent = category.title;
+    certModal.classList.add("open");
+    certModal.setAttribute("aria-hidden", "false");
+  });
+}
 
 // Close popup
 function closeCertModal() {
+  if (!certModal) return;
   certModal.classList.remove("open");
   certModal.setAttribute("aria-hidden", "true");
 }
 
-certModalClose.addEventListener("click", closeCertModal);
+if (certModalClose) {
+  certModalClose.addEventListener("click", closeCertModal);
+}
 
-certModal.addEventListener("click", (e) => {
-  if (e.target === certModal) closeCertModal();
-});
+if (certModal) {
+  certModal.addEventListener("click", (e) => {
+    if (e.target === certModal) closeCertModal();
+  });
+}
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && certModal.classList.contains("open")) {
+  if (e.key === "Escape" && certModal?.classList.contains("open")) {
     closeCertModal();
   }
 });
