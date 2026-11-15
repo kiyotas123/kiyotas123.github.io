@@ -251,9 +251,9 @@ function renderCertGallery() {
         <div class="cert-card-body">
           <h3>${category.title}</h3>
           <p>${category.detail}</p>
-          <a class="cert-view" href="${category.link}">
-            VIEW CREDENTIALS &rarr;
-          </a>
+        <button class="cert-view" type="button" data-cert-index="${certCategories.indexOf(category)}">
+  VIEW CREDENTIALS &rarr;
+</button>
         </div>
       </article>
     `;
