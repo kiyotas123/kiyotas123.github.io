@@ -184,6 +184,12 @@ const certCategories = [
   date: "November 13, 2026",
   credential: "Certified SOLIDWORKS Associate (CSWA)",
 },
+{
+  title: "AutoCAD",
+  detail: "Technical Drafting",
+  image: "images/Autocad.jpg",
+  link: "certifications/autocad.html",
+},
   {
     title: "CPR / First Aid",
     detail: "American Red Cross",
