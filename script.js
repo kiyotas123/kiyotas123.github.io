@@ -182,10 +182,13 @@ const certCategories = [
   link: "certifications/solidworks.html",
 },
   {
-  title: "AutoCAD",
-  detail: "Technical Drafting",
-  image: "images/autocad.png",
-  link: "certifications/autocad.html",
+  title: "SOLIDWORKS",
+  detail: "CAD & 3D Design",
+  image: "images/Solidwork.jpg",
+  certificateImage: "images/SolidworksCert.png",
+  issuer: "Dassault Systèmes",
+  date: "November 13, 2026",
+  credential: "Certified SOLIDWORKS Associate (CSWA)",
 },
   {
     title: "CPR / First Aid",
