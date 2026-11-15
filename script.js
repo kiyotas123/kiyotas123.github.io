@@ -190,12 +190,15 @@ const certCategories = [
   image: "images/autocad.png",
   link: "certifications/autocad.html",
 },
-  {
-    title: "CPR / First Aid",
-    detail: "American Red Cross",
-    image: "images/CPR.jpg",
-    link: "certifications/cpr-first-aid.html",
-  },
+ {
+  title: "AutoCAD",
+  detail: "Technical Drafting",
+  image: "images/Autocad.jpg",
+  certificateImage: "images/Autodesk.png",
+  issuer: "Autodesk",
+  date: "Add your date earned",
+  credential: "AutoCAD Certification",
+},
   {
     title: "SolidProfessor",
     detail: "Engineering Software Training",
