@@ -777,11 +777,21 @@ input:focus, textarea:focus { border-color: var(--primary); }
   align-items: center;
   gap: 8px;
   margin-top: 20px;
+  padding: 0;
+  border: none;
+  background: transparent;
   color: var(--primary-bright);
   font-family: var(--font-display);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.cert-view:hover {
+  color: #fff;
+  transform: translateX(4px);
 }
 
 .cert-view:hover {
