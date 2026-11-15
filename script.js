@@ -174,34 +174,31 @@ document.getElementById("timeline").append(
 
 // ---------- CERTIFICATION GALLERY ----------
 
-const certCategories = [
-{
-  title: "SOLIDWORKS",
-  detail: "CAD & 3D Design",
-  image: "images/Solidwork.jpg",
-  certificateImage: "images/SolidworksCert.png",
-  issuer: "Dassault Systèmes",
-  date: "November 13, 2026",
-  credential: "Certified SOLIDWORKS Associate (CSWA)",
-},
-{
-  title: "AutoCAD",
-  detail: "Technical Drafting",
-  image: "images/Autocad.jpg",
-  certificateImage: "images/Autodesk.png",
-  issuer: "Autodesk",
-  date: "May 9, 2025",
-  credential: "AutoCAD Certification",
-},
- {
-  title: "AutoCAD",
-  detail: "Technical Drafting",
-  image: "images/Autocad.jpg",
-  certificateImage: "images/Autodesk.png",
-  issuer: "Autodesk",
-  date: "Add your date earned",
-  credential: "AutoCAD Certification",
-},
+onst certCategories = [
+  {
+    title: "SOLIDWORKS",
+    detail: "CAD & 3D Design",
+    image: "images/Solidwork.jpg",
+    certificateImage: "images/SolidworksCert.png",
+    issuer: "Dassault Systèmes",
+    date: "November 13, 2026",
+    credential: "Certified SOLIDWORKS Associate (CSWA)",
+  },
+  {
+    title: "AutoCAD",
+    detail: "Technical Drafting",
+    image: "images/Autocad.jpg",
+    certificateImage: "images/Autodesk.png",
+    issuer: "Autodesk",
+    date: "May 9, 2025",
+    credential: "AutoCAD Certification",
+  },
+  {
+    title: "CPR / First Aid",
+    detail: "American Red Cross",
+    image: "images/CPR.jpg",
+    link: "certifications/cpr-first-aid.html",
+  },
   {
     title: "SolidProfessor",
     detail: "Engineering Software Training",
@@ -209,22 +206,22 @@ const certCategories = [
     link: "certifications/solidprofessor.html",
   },
   {
-  title: "TEEX",
-  detail: "Workforce & Safety Training",
-  image: "images/teex.jpg",
-  link: "certifications/teex.html",
-},
-   {
-     title: "MSI",
-  detail: "Management & Strategy Training",
-  image: "images/MSI.jpg",
-  link: "certifications/msi.html",
+    title: "TEEX",
+    detail: "Workforce & Safety Training",
+    image: "images/teex.jpg",
+    link: "certifications/teex.html",
+  },
+  {
+    title: "MSI",
+    detail: "Management & Strategy Training",
+    image: "images/MSI.jpg",
+    link: "certifications/msi.html",
   },
   {
     title: "EVERFI",
-  detail: "Professional Development",
-  image: "images/everfi.png",
-  link: "certifications/everfi.html",
+    detail: "Professional Development",
+    image: "images/everfi.png",
+    link: "certifications/everfi.html",
   },
 ];
 
