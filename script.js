@@ -193,97 +193,87 @@ const certCategories = [
     date: "May 9, 2025",
     credential: "AutoCAD Certification",
   },
-{
-  title: "CPR / First Aid",
-  detail: "First Aid, CPR & AED Training",
-  image: "images/CPR.jpg",
-  certificates: [
-    {
-      image: "images/CPRCert.png",
-      credential: "Adult and Pediatric First Aid/CPR/AED",
-      date: "October 9, 2026",
-      expiration: "October 9, 2028",
-    },
-    {
-      image: "images/InstructorCert.png",
-      credential: "First Aid/CPR/AED Instructor r.25",
-      date: "October 9, 2026",
-      expiration: "October 9, 2028",
-    },
-  ],
-},
-{
-  title: "SolidProfessor",
-  detail: "Engineering Software Training",
-  image: "images/Solidprofessor.jpg",
-  certificates: [
   {
-  title: "SolidProfessor",
-  detail: "Engineering Software Training",
-  image: "images/Solidprofessor.jpg",
-  certificates: [
-    {
-  title: "SolidProfessor",
-  detail: "Engineering Software Training",
-  image: "images/Solidprofessor.jpg",
-  certificates: [
-    {
-      credential: "Onshape Beginner to Certification",
-      date: "September 14, 2024",
-      image: "images/ONSHAPEBeginner.png",
-    },
-    {
-      credential: "Introduction to 3D Printing",
-      date: "September 3, 2024",
-      image: "images/IntroTo3DPrinting.png",
-    },
-    {
-      credential: "AutoCAD Beginner to Certification",
-      date: "February 8, 2023",
-      image: "images/AutocadBeginner.png",
-    },
-    {
-      credential: "AutoCAD Essentials",
-      date: "February 7, 2023",
-      image: "images/AutocadEssentials.png",
-    },
-    {
-      credential: "AutoCAD User Certification Prep Course",
-      date: "January 30, 2023",
-      image: "images/AutocadUserPrepCourse.png",
-    },
-    {
-      credential: "Introduction to AutoCAD",
-      date: "February 6, 2023",
-      image: "images/IntroToAutoCad.png",
-    },
-    {
-      credential: "MATLAB Essentials",
-      date: "February 1, 2023",
-      image: "images/MATLABEssentials.png",
-    },
-    {
-      credential: "MATLAB Advanced Concepts",
-      date: "February 1, 2023",
-      image: "images/MATLABAdvancedConcepts.png",
-    },
-    {
-      credential: "Introduction to MATLAB",
-      date: "February 6, 2023",
-      image: "images/IntrotoMATLAB.png",
-    },
-    {
-      credential: "3D Printing with MakerBot",
-      date: "September 11, 2024",
-      image: "images/3DPrintingWithMakerbot.png",
-    },
-    {
-      credential: "Learn to Use SolidProfessor as an Instructor",
-      date: "September 13, 2024",
-      image: "images/LearnToUseSolidprofessor.png",
-    },
-  ],
-},
+    title: "CPR / First Aid",
+    detail: "First Aid, CPR & AED Training",
+    image: "images/CPR.jpg",
+    certificates: [
+      {
+        image: "images/CPRCert.png",
+        credential: "Adult and Pediatric First Aid/CPR/AED",
+        date: "October 9, 2026",
+        expiration: "October 9, 2028",
+      },
+      {
+        image: "images/InstructorCert.png",
+        credential: "First Aid/CPR/AED Instructor r.25",
+        date: "October 9, 2026",
+        expiration: "October 9, 2028",
+      },
+    ],
+  },
+  {
+    title: "SolidProfessor",
+    detail: "Engineering Software Training",
+    image: "images/Solidprofessor.jpg",
+    certificates: [
+      {
+        credential: "Onshape Beginner to Certification",
+        date: "September 14, 2024",
+        image: "images/ONSHAPEBeginner.png",
+      },
+      {
+        credential: "Introduction to 3D Printing",
+        date: "September 3, 2024",
+        image: "images/IntroTo3DPrinting.png",
+      },
+      {
+        credential: "AutoCAD Beginner to Certification",
+        date: "February 8, 2023",
+        image: "images/AutocadBeginner.png",
+      },
+      {
+        credential: "AutoCAD Essentials",
+        date: "February 7, 2023",
+        image: "images/AutocadEssentials.png",
+      },
+      {
+        credential: "AutoCAD User Certification Prep Course",
+        date: "January 30, 2023",
+        image: "images/AutocadUserPrepCourse.png",
+      },
+      {
+        credential: "Introduction to AutoCAD",
+        date: "February 6, 2023",
+        image: "images/IntroToAutoCad.png",
+      },
+      {
+        credential: "MATLAB Essentials",
+        date: "February 1, 2023",
+        image: "images/MATLABEssentials.png",
+      },
+      {
+        credential: "MATLAB Advanced Concepts",
+        date: "February 1, 2023",
+        image: "images/MATLABAdvancedConcepts.png",
+      },
+      {
+        credential: "Introduction to MATLAB",
+        date: "February 6, 2023",
+        image: "images/IntrotoMATLAB.png",
+      },
+      {
+        credential: "3D Printing with MakerBot",
+        date: "September 11, 2024",
+        image: "images/3DPrintingWithMakerbot.png",
+      },
+      {
+        credential: "Learn to Use SolidProfessor as an Instructor",
+        date: "September 13, 2024",
+        image: "images/LearnToUseSolidprofessor.png",
+      },
+    ],
+  },
   {
     title: "TEEX",
     detail: "Workforce & Safety Training",
@@ -303,7 +293,6 @@ const certCategories = [
     link: "certifications/everfi.html",
   },
 ];
-
 const certTrack = document.getElementById("certTrack");
 const certDots = document.getElementById("certDots");
 const certPrev = document.getElementById("certPrev");
