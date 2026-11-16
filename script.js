@@ -274,12 +274,23 @@ const certCategories = [
     },
   ],
 },
-   {
-    title: "TEEX",
-    detail: "Workforce & Safety Training",
-    image: "images/teex.jpg",
-    link: "certifications/teex.html",
-  },
+ {
+  title: "TEEX",
+  detail: "Emergency Management & Safety Training",
+  image: "images/teex.jpg",
+  certificates: [
+    {
+      credential: "Disaster Recovery Awareness",
+      date: "April 16, 2024",
+      image: "images/Disaster Recovery Awareness.png",
+    },
+    {
+      credential: "Disaster Awareness for Water and Wastewater Utilities, an Introduction",
+      date: "April 22, 2024",
+      image: "images/Disaster Awareness for Water and Wastewater Utilities, an Introduction.png",
+    },
+  ],
+},
   {
     title: "MSI",
     detail: "Management & Strategy Training",
