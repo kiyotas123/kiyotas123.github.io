@@ -318,12 +318,43 @@ const certCategories = [
     },
   ],
 },
-  {
-    title: "EVERFI",
-    detail: "Professional Development",
-    image: "images/everfi.png",
-    link: "certifications/everfi.html",
-  },
+{
+  title: "EVERFI",
+  detail: "Financial Literacy & Professional Development",
+  image: "images/everfi.png",
+  certificates: [
+    {
+      credential: "Data Science Foundation",
+      date: "March 9, 2024",
+      image: "images/DataScienceFoundation.png",
+    },
+    {
+      credential: "Grow: Financial Planning for Life",
+      date: "April 4, 2024",
+      image: "images/GrowFinancialPlanningForLife.png",
+    },
+    {
+      credential: "Ignition: Digital Wellness and Safety",
+      date: "Date not listed",
+      image: "images/IgnitionDigitalWellnessAndSafety.png",
+    },
+    {
+      credential: "Venture: Entrepreneurial Expedition",
+      date: "April 5, 2024",
+      image: "images/VentureEntrepreneurialExpedition.png",
+    },
+    {
+      credential: "Pathways: Financing Higher Education",
+      date: "March 10, 2024",
+      image: "images/PathwaysFinancingHigherEducation.png",
+    },
+    {
+      credential: "Accounting Careers: Limitless Opportunities",
+      date: "Date not listed",
+      image: "images/AccountingCareersLimitlessOpportunities.png",
+    },
+  ],
+},
 ];
 const certTrack = document.getElementById("certTrack");
 const certDots = document.getElementById("certDots");
