@@ -291,12 +291,33 @@ const certCategories = [
     },
   ],
 },
-  {
-    title: "MSI",
-    detail: "Management & Strategy Training",
-    image: "images/MSI.jpg",
-    link: "certifications/msi.html",
-  },
+ {
+  title: "MSI",
+  detail: "Management & Professional Development",
+  image: "images/MSI.jpg",
+  certificates: [
+    {
+      credential: "Business Management Essentials Certified",
+      date: "January 18, 2023",
+      image: "images/BusinessManagementEssentialsCertified.png",
+    },
+    {
+      credential: "Lean Six Sigma White Belt Certified",
+      date: "January 17, 2023",
+      image: "images/LeanSixSigmaWhiteBeltCertified.png",
+    },
+    {
+      credential: "Misinformation and Disinformation Training",
+      date: "January 18, 2023",
+      image: "images/MisinformationAndDisinformationTraining.png",
+    },
+    {
+      credential: "Project Management Essentials Certified",
+      date: "January 18, 2023",
+      image: "images/ProjectManagementEssentialsCertified.png",
+    },
+  ],
+},
   {
     title: "EVERFI",
     detail: "Professional Development",
