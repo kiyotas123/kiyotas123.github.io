@@ -1353,3 +1353,85 @@ input:focus, textarea:focus { border-color: var(--primary); }
     border-radius: 12px;
   }
 }
+
+/* ---------- FUTURISTIC HERO DESIGN ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 80% 35%,
+      rgba(27, 59, 90, 0.22),
+      transparent 55%
+    ),
+    linear-gradient(145deg, #080d14, #080a0d);
+}
+
+.hero-glow {
+  background:
+    radial-gradient(
+      circle at 75% 40%,
+      rgba(227, 27, 35, 0.13),
+      transparent 55%
+    );
+}
+
+.hero .rule {
+  box-shadow: 0 0 15px rgba(227, 27, 35, 0.45);
+  border-radius: 10px;
+}
+
+.hero .lead {
+  line-height: 1.8;
+}
+
+.hero .btn {
+  border-radius: 9px;
+  transition: all 0.3s ease;
+}
+
+.hero .btn-primary {
+  box-shadow: 0 5px 20px rgba(227, 27, 35, 0.15);
+}
+
+.hero .btn-primary:hover {
+  box-shadow: 0 8px 25px rgba(227, 27, 35, 0.3);
+  transform: translateY(-3px);
+}
+
+.hero .btn-ghost {
+  border-radius: 9px;
+  background: rgba(21, 28, 37, 0.45);
+}
+
+.hero .icon-btn {
+  border-radius: 10px;
+  background: rgba(21, 28, 37, 0.5);
+}
+
+.hero .icon-btn:hover {
+  box-shadow: 0 0 18px rgba(227, 27, 35, 0.15);
+}
+
+/* Hero drawing card */
+.hero .dwg {
+  overflow: hidden;
+  border: 1px solid #304256;
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, #151f2c, #0d121a);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hero .dwg-head {
+  background: rgba(27, 59, 90, 0.18);
+}
+
+.hero .dwg-body {
+  overflow: hidden;
+}
+
+.hero .dwg-foot {
+  background: rgba(21, 28, 37, 0.8);
+}
