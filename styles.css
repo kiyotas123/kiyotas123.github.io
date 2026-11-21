@@ -1435,3 +1435,37 @@ input:focus, textarea:focus { border-color: var(--primary); }
 .hero .dwg-foot {
   background: rgba(21, 28, 37, 0.8);
 }
+/* ---------- FUTURISTIC ABOUT DESIGN ---------- */
+
+.about .stack,
+.about .cell-grid,
+.about .cell {
+  border-radius: 16px;
+}
+
+.about .stack {
+  overflow: hidden;
+  border: 1px solid #29394b;
+  background: linear-gradient(145deg, #111a25, #0b1017);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.about .cell {
+  background: rgba(21, 31, 44, 0.65);
+  border: 1px solid #29394b;
+  transition: all 0.3s ease;
+}
+
+.about .cell:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(227, 27, 35, 0.1);
+}
+
+.about .cell-grid {
+  gap: 14px;
+}
+
+.about .stack img {
+  border-radius: 12px;
+}
