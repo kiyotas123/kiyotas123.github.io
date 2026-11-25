@@ -2306,3 +2306,58 @@ textarea:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ---------- SMOOTH LOOPING CERTIFICATION CAROUSEL ---------- */
+
+.cert-track {
+  display: flex;
+  gap: 20px;
+  min-width: 0;
+  overflow: hidden;
+  transform: translateX(0);
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.cert-track .cert-card {
+  flex: 0 0 calc((100% - 40px) / 3);
+  min-width: 0;
+}
+
+/* Medium screens: show 2 cards */
+@media (max-width: 900px) {
+  .cert-track .cert-card {
+    flex: 0 0 calc((100% - 20px) / 2);
+  }
+}
+
+/* Mobile: show 1 card */
+@media (max-width: 600px) {
+  .cert-track .cert-card {
+    flex: 0 0 100%;
+  }
+}
+
+/* Let JavaScript control the sliding motion */
+.cert-track .cert-card:nth-child(n) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Keep the card buttons at the bottom */
+.cert-track .cert-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cert-track .cert-card-body .cert-view {
+  align-self: flex-start;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cert-track {
+    transition: none;
+  }
+}
